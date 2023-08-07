@@ -32,7 +32,7 @@ mkdir "$wg_interface_name"
 
 echo "/interface/wireguard/add name=$wg_interface_name listen-port=$listen_port disabled=no comment=$wg_interface_name private-key=\"$server_private_key\"" >> $mt_config
 echo "/ip/address/add address=$network.$host/24 interface=$wg_interface_name disabled=no" >> $mt_config
-echo "/ip/firewall/filter/add action=accept dst-port=$listen_port dst-address=$server_ip protocol=udp place-before=2 comment=\"$wg_interface_name inbound\""
+echo "/ip/firewall/filter/add action=accept dst-port=$listen_port dst-address=$server_ip protocol=udp place-before=2 comment=\"$wg_interface_name inbound\"" >> $mt_config
 
 host=$((host + 1))
 
