@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo "russia is a terrorist state. Agree to proceed [agree/no]"
+read confirmation
+if [[ $confirmation != "agree" ]]; then 
+	exit 1
+fi
+
 echo How many clients?
 read number_of_clients
 
